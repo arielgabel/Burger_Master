@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 20f;
     void Start()
     {
-      //  m_Animator = GetComponent<Animator>();
+        m_Animator = GetComponent<Animator>();
         joystick = FindObjectOfType<Joystick>();
         m_rigidbody = GetComponent<Rigidbody>();
 
@@ -32,9 +32,13 @@ public class PlayerMovement : MonoBehaviour
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
-        
-        m_Animator.SetBool("IsWalking", isWalking);
         */
+        bool hasHorizontalInput = !Mathf.Approximately(vertical, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(horizontal, 0f);
+        bool isWalking = hasHorizontalInput || hasVerticalInput;
+
+        m_Animator.SetBool("IsWalking", isWalking);
+        
         Vector3 desiredForward = Vector3.RotateTowards
             (transform.forward, m_rigidbody.velocity, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation(desiredForward);
@@ -43,9 +47,9 @@ public class PlayerMovement : MonoBehaviour
     void OnAnimatorMove()
     {
 
-    /*    m_rigidbody.MovePosition
+        m_rigidbody.MovePosition
             (m_rigidbody.position + m_rigidbody.velocity * m_Animator.deltaPosition.magnitude);
-        m_rigidbody.MoveRotation(m_Rotation);*/
+        m_rigidbody.MoveRotation(m_Rotation);
     }
 
 }
