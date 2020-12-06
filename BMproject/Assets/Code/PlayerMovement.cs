@@ -46,8 +46,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 m_Animator.SetBool("IsHolding", true);
                 Vector3 playerLoc = this.transform.localPosition;
-
-                child.localPosition = new Vector3(playerLoc.x + 10, playerLoc.y + 45, playerLoc.z + 30);
+                if(m_Animator.GetCurrentAnimatorStateInfo(0).IsName("standingWith"))
+                    child.localPosition = new Vector3(playerLoc.x + 10, playerLoc.y + 45, playerLoc.z + 30);
                 break;
             }
             m_Animator.SetBool("IsHolding", false); // if never break, then 

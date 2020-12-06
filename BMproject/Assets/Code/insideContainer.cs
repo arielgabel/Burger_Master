@@ -9,7 +9,6 @@ public class insideContainer : MonoBehaviour
     public GameObject myPlayer;
     public joyButton m_getInfo; // need to check how
 
-    
     public Transform getFoodObject()
     {
         return myFood;
@@ -39,14 +38,15 @@ public class insideContainer : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isCollideWithPlayer = true;
+            this.gameObject.GetComponent<Renderer>().material.color = Color.HSVToRGB(0.077f, 0.489f, 1.0f);
         }
     }
     void OnCollisionExit(Collision other)
     {
-        //Debug.Log("on collision exit");
         if (other.gameObject.CompareTag("Player"))
         {
             isCollideWithPlayer = false;
+            this.gameObject.GetComponent<Renderer>().material.color = Color.HSVToRGB(0.077f, 0.489f, 0.717f);
         }
     }
 
