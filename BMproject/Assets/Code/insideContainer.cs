@@ -21,19 +21,14 @@ public class insideContainer : MonoBehaviour
     {
         if (isCollideWithPlayer && m_getInfo.ReturnIfPressed()) // if theres a collision and the pickup button is pressed
         {
-            //need to add the joystick if condition and see if ok.
             myFood.transform.SetParent(myPlayer.transform);
-            Vector3 playerLoc = myPlayer.transform.localPosition;
-
-            myFood.localPosition = new Vector3(playerLoc.x + 10, playerLoc.y + 45, playerLoc.z + 30);
-            Debug.Log("in update and parent");
-
-          //  if(myFood.tag == "Food")
-          //      Debug.Log("it's food!");
+           // Vector3 playerLoc = myPlayer.transform.localPosition;
+            
+            //myFood.localPosition = new Vector3(playerLoc.x + 10, playerLoc.y + 45, playerLoc.z + 30);
         }
         else
         {
-            //maybe need maybe not
+            //maybe need maybe not. probabely need to put back the item
             // forDebug = true;
         }
     }
@@ -48,7 +43,7 @@ public class insideContainer : MonoBehaviour
     }
     void OnCollisionExit(Collision other)
     {
-        Debug.Log("on collision exit");
+        //Debug.Log("on collision exit");
         if (other.gameObject.CompareTag("Player"))
         {
             isCollideWithPlayer = false;

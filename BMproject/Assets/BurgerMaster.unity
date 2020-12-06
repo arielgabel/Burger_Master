@@ -2074,7 +2074,7 @@ MonoBehaviour:
   isCollideWithPlayer: 0
   myFood: {fileID: 1090804946}
   myPlayer: {fileID: 2032567405}
-  m_getInfo: {fileID: 0}
+  m_getInfo: {fileID: 1581392393}
 --- !u!65 &279067073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2086,8 +2086,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2.1874099}
-  m_Center: {x: 0, y: -0.0000000027926266, z: 0.093705}
+  m_Size: {x: 1.6922088, y: 2.1423402, z: 2.1874099}
+  m_Center: {x: 0.1538955, y: 0.071170114, z: 0.093705006}
 --- !u!1 &284815981 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4106887e7e82b4e30b26107840ec1ddf,
@@ -7933,6 +7933,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fe5c9a66e071545c0894aab6f10b2b67,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fe5c9a66e071545c0894aab6f10b2b67,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fe5c9a66e071545c0894aab6f10b2b67,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fe5c9a66e071545c0894aab6f10b2b67,
         type: 3}
       propertyPath: m_Name
@@ -9392,8 +9407,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2.1874099}
-  m_Center: {x: 0, y: -0.0000000027926266, z: 0.093705}
+  m_Size: {x: 1.5197054, y: 2.1911216, z: 2.1874099}
+  m_Center: {x: -0.24014705, y: 0.095560774, z: 0.093705006}
 --- !u!1 &1256277342
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,22 +25,37 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        
         m_Animator.SetBool("isButtonClicked", m_btn.ReturnIfPressed());
         float horizontal = joystick.Horizontal * 10f;
         float vertical = joystick.Vertical * 10f;
 
-        m_rigidbody.velocity = new Vector3(joystick.Vertical * -10f,
+        m_rigidbody.velocity = new Vector3(joystick.Vertical * -10,
                                                 m_rigidbody.velocity.y,
-                                                joystick.Horizontal * 10f);
+                                                joystick.Horizontal * 10);
  
 
         bool hasHorizontalInput = !Mathf.Approximately(vertical, 0f);
         bool hasVerticalInput = !Mathf.Approximately(horizontal, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
+        
+        
+        for(int i = 0; i < this.transform.childCount; i++) // going threw all childs
+        {
+            Transform child = this.transform.GetChild(i);
+            if(child.tag == "Food") // if theres a Food child, then player isHoling, and break
+            {
+                m_Animator.SetBool("IsHolding", true);
+                Vector3 playerLoc = this.transform.localPosition;
+
+                child.localPosition = new Vector3(playerLoc.x + 10, playerLoc.y + 45, playerLoc.z + 30);
+                break;
+            }
+            m_Animator.SetBool("IsHolding", false); // if never break, then 
+        }
 
         m_Animator.SetBool("IsWalking", isWalking);
-        
+
+
         Vector3 desiredForward = Vector3.RotateTowards
             (transform.forward, m_rigidbody.velocity, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation(desiredForward);
